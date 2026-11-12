@@ -1,0 +1,108 @@
+/* 01 - Cores, fontes, estilos compartilhados e foco acessível. */
+
+/* Privacidade 360: interface própria inspirada em plataformas corporativas de governança.
+ *    Paleta de referência DPOnet: #243155 #0763A0 #80B92B #BA2980 #666666 */
+
+:root {
+  --navy: #243155;
+  --navy-deep: #172240;
+  --blue: #0763a0;
+  --blue-hi: #0a72b8;
+  --green: #80b92b;
+  --magenta: #ba2980;
+  --bg: #f4f7fb;
+  --surface: #fff;
+  --ink: #202b3f;
+  --muted: #6c7890;
+  --line: #e4eaf2;
+  --soft-blue: #eef6fc;
+  --soft-green: #f0f8e9;
+  --warn: #b7791f;
+  --danger: #c53b56;
+  --shadow: 0 6px 24px rgba(31,49,84,.045);
+  font-family: Roboto,"Open Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+body {
+  font-size: 14px;
+}
+
+button,input,textarea,select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: .55;
+}
+
+button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible {
+  outline: 3px solid #75b5e6;
+  outline-offset: 2px;
+}
+
+svg.icon {
+  width: 19px;
+  height: 19px;
+  stroke: currentColor;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+  flex-shrink: 0;
+}
+
+.icon.lg {
+  width: 26px;
+  height: 26px;
+}
+
+.icon-sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+h1,h2,h3,p {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(23px,2.6vw,32px);
+  letter-spacing: -.04em;
+  margin-bottom: 7px;
+}
+
+h2 {
+  font-size: 16px;
+  letter-spacing: -.015em;
+}
+
+p {
+  line-height: 1.6;
+}
+
+small {
+  font-size: 11px;
+}
+
+a {
+  color: var(--blue);
+}

@@ -1,0 +1,15 @@
+# Configuração privada
+.env
+.env.*
+!.env.example
+
+# Dados das entrevistas (informações pessoais)
+entrevistas/*.json
+entrevistas/*.md
+
+# Python e VS Code
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.DS_Store

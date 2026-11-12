@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <meta content="#243155" name="theme-color"/>
+  <meta content="Plataforma local de entrevistas e invent&aacute;rio de dados pessoais LGPD." name="description"/>
+  <title>
+   Privacidade 360 | Mapeamento LGPD
+  </title>
+  <link href="/static/styles.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <svg aria-hidden="true" class="icon-sprite" xmlns="http://www.w3.org/2000/svg">
+   <symbol id="i-grid" viewBox="0 0 24 24">
+    <rect height="7" rx="1.5" width="7" x="3" y="3">
+    </rect>
+    <rect height="7" rx="1.5" width="7" x="14" y="3">
+    </rect>
+    <rect height="7" rx="1.5" width="7" x="3" y="14">
+    </rect>
+    <rect height="7" rx="1.5" width="7" x="14" y="14">
+    </rect>
+   </symbol>
+   <symbol id="i-chat" viewBox="0 0 24 24">
+    <path d="M20 11.5a8 8 0 0 1-8 8 9 9 0 0 1-4.1-1L3 20l1.5-4.8A8 8 0 1 1 20 11.5Z">
+    </path>
+   </symbol>
+   <symbol id="i-list" viewBox="0 0 24 24">
+    <rect height="16" rx="2" width="18" x="3" y="4">
+    </rect>
+    <path d="M8 9h9M8 14h9">
+    </path>
+   </symbol>
+   <symbol id="i-report" viewBox="0 0 24 24">
+    <path d="M7 3h7l5 5v12a1 1 0 0 1-1 1H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z">
+    </path>
+    <path d="M14 3v5h5M9 13h6M9 17h6">
+    </path>
+   </symbol>
+   <symbol id="i-settings" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="3">
+    </circle>
+    <path d="M19 12a7.4 7.4 0 0 0-.1-1l2-1.6-2-3.5-2.4 1a9 9 0 0 0-1.8-1L14.3 3h-4.1l-.4 2.9a8 8 0 0 0-1.8 1l-2.4-1-2 3.5 2 1.6a8 8 0 0 0 0 2l-2 1.6 2 3.5 2.4-1a9 9 0 0 0 1.8 1l.4 2.9h4.1l.4-2.9a8 8 0 0 0 1.8-1l2.4 1 2-3.5-2-1.6a8 8 0 0 0 .1-1Z">
+    </path>
+   </symbol>
+   <symbol id="i-plus" viewBox="0 0 24 24">
+    <path d="M12 5v14M5 12h14">
+    </path>
+   </symbol>
+   <symbol id="i-arrow" viewBox="0 0 24 24">
+    <path d="M5 12h14M13 6l6 6-6 6">
+    </path>
+   </symbol>
+   <symbol id="i-search" viewBox="0 0 24 24">
+    <circle cx="10.5" cy="10.5" r="7">
+    </circle>
+    <path d="m16 16 5 5">
+    </path>
+   </symbol>
+   <symbol id="i-check" viewBox="0 0 24 24">
+    <path d="m4 12 5 5L20 6">
+    </path>
+   </symbol>
+   <symbol id="i-clock" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="9">
+    </circle>
+    <path d="M12 7v5l3 2">
+    </path>
+   </symbol>
+   <symbol id="i-shield" viewBox="0 0 24 24">
+    <path d="M12 2 4 5v6c0 5 3 8 8 11 5-3 8-6 8-11V5l-8-3Z">
+    </path>
+    <path d="m8 12 3 3 5-6">
+    </path>
+   </symbol>
+   <symbol id="i-activity" viewBox="0 0 24 24">
+    <path d="M2 12h5l3-7 4 14 3-7h5">
+    </path>
+   </symbol>
+   <symbol id="i-mic" viewBox="0 0 24 24">
+    <rect height="12" rx="3" width="6" x="9" y="3">
+    </rect>
+    <path d="M5 11a7 7 0 0 0 14 0M12 18v4M8 22h8">
+    </path>
+   </symbol>
+   <symbol id="i-send" viewBox="0 0 24 24">
+    <path d="m21 3-9 18-3.5-7.5L1 10Z">
+    </path>
+    <path d="M8.5 13.5 21 3">
+    </path>
+   </symbol>
+   <symbol id="i-refresh" viewBox="0 0 24 24">
+    <path d="M20 7v5h-5M4 17v-5h5">
+    </path>
+    <path d="M5.5 9A7 7 0 0 1 18 7l2 5M4 12l2 5a7 7 0 0 0 12.5-2">
+    </path>
+   </symbol>
+   <symbol id="i-download" viewBox="0 0 24 24">
+    <path d="M12 3v12m-5-5 5 5 5-5M4 17v3h16v-3">
+    </path>
+   </symbol>
+   <symbol id="i-pen" viewBox="0 0 24 24">
+    <path d="m4 20 4-.8L20 7.5 16.5 4 4.8 15.9 4 20ZM14.5 6l3.5 3.5">
+    </path>
+   </symbol>
+   <symbol id="i-trash" viewBox="0 0 24 24">
+    <path d="M4 7h16M9 7V4h6v3M6 7l1 14h10l1-14M10 11v6m4-6v6">
+    </path>
+   </symbol>
+   <symbol id="i-chevron" viewBox="0 0 24 24">
+    <path d="m7 10 5 5 5-5">
+    </path>
+   </symbol>
+   <symbol id="i-menu" viewBox="0 0 24 24">
+    <path d="M4 6h16M4 12h16M4 18h16">
+    </path>
+   </symbol>
+   <symbol id="i-x" viewBox="0 0 24 24">
+    <path d="M5 5 19 19M19 5 5 19">
+    </path>
+   </symbol>
+   <symbol id="i-info" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="9">
+    </circle>
+    <path d="M12 11v6M12 7h.01">
+    </path>
+   </symbol>
+   <symbol id="i-folder" viewBox="0 0 24 24">
+    <path d="M3 6h7l2 2h9v12H3Z">
+    </path>
+   </symbol>
+  </svg>
+  <div class="app-shell" id="appShell">
+   <!-- Navegação principal: dashboard, entrevistas, mapeamento, relatórios e ajustes. -->
+   <aside aria-label="Menu principal" class="sidebar" id="sidebar">
+    <div class="brand">
+     <div class="brand-mark">
+      <svg class="icon lg">
+       <use href="#i-shield">
+       </use>
+      </svg>
+     </div>
+     <div class="brand-text">
+      <strong>
+       Privacidade
+       <span>
+        360
+       </span>
+      </strong>
+      <small>
+       PLATAFORMA LGPD
+      </small>
+     </div>
+     <button aria-label="Fechar menu" class="icon-btn close-menu" id="fecharMenu">
+      <svg class="icon">
+       <use href="#i-x">
+       </use>
+      </svg>
+     </button>
+    </div>
+    <div class="nav-caption">
+     WORKSPACE
+    </div>
+    <nav aria-label="Navega&ccedil;&atilde;o" class="navigation">
+     <button class="nav-item active" data-view="dashboard">
+      <svg class="icon">
+       <use href="#i-grid">
+       </use>
+      </svg>
+      <span>
+       Vis&atilde;o geral
+      </span>
+     </button>
+     <button class="nav-item" data-view="entrevistas">
+      <svg class="icon">
+       <use href="#i-chat">
+       </use>
+      </svg>
+      <span>
+       Entrevistas
+      </span>
+      <span class="nav-count" id="sideTotal">
+       0
+      </span>
+     </button>
+     <button class="nav-item" data-view="processos">
+      <svg class="icon">
+       <use href="#i-list">
+       </use>
+      </svg>
+      <span>
+       Mapeamento
+      </span>
+     </button>
+     <button class="nav-item" data-view="relatorios">
+      <svg class="icon">
+       <use href="#i-report">
+       </use>
+      </svg>
+      <span>
+       Relat&oacute;rios
+      </span>
+     </button>
+    </nav>
+    <div class="nav-caption second">
+     SUPORTE
+    </div>
+    <nav class="navigation">
+     <button class="nav-item" data-view="configuracoes">
+      <svg class="icon">
+       <use href="#i-settings">
+       </use>
+      </svg>
+      <span>
+       Configura&ccedil;&otilde;es
+      </span>
+     </button>
+    </nav>
+    <div class="sidebar-bottom">
+     <div class="sidebar-info">
+      <svg class="icon">
+       <use href="#i-shield">
+       </use>
+      </svg>
+      <div>
+       <strong>
+        Ambiente local
+       </strong>
+       <small>
+        Seus registros ficam neste computador
+       </small>
+      </div>
+     </div>
+     <div class="sidebar-foot">
+      Agente de mapeamento LGPD &middot; v2.0
+     </div>
+    </div>
+   </aside>
+   <div class="main-area">
+    <header class="topbar">
+     <div class="header-left">
+      <button aria-label="Abrir menu" class="icon-btn hamburger" id="abrirMenu">
+       <svg class="icon">
+        <use href="#i-menu">
+        </use>
+       </svg>
+      </button>
+      <div class="breadcrumbs">
+       Plataforma
+       <span>
+        /
+       </span>
+       <strong id="breadcrumb">
+        Vis&atilde;o geral
+       </strong>
+      </div>
+     </div>
+     <div class="topbar-actions">
+      <span class="online">
+       <span class="online-dot">
+       </span>
+       Servidor local
+      </span>
+      <span class="topbar-separator">
+      </span>
+      <button class="btn btn-primary btn-sm" id="novoTopo">
+       <svg class="icon">
+        <use href="#i-plus">
+        </use>
+       </svg>
+       Nova entrevista
+      </button>
+      <div class="user-avatar" title="&Aacute;rea de privacidade">
+       LG
+      </div>
+     </div>
+    </header>
+    <main class="content" id="mainContent" tabindex="-1">
+     <!-- Cada seção corresponde a uma opção no menu. -->
+     <section aria-label="Vis&atilde;o geral" class="view active" id="view-dashboard">
+      <div class="page-heading">
+       <div>
+        <div class="eyebrow">
+         CENTRAL DE PRIVACIDADE
+        </div>
+        <h1>
+         Painel de governan&ccedil;a
+        </h1>
+        <p>
+         Visibilidade e controle sobre o mapeamento de dados pessoais.
+        </p>
+       </div>
+       <!-- Criar entrevista apenas pelo botão global do topo. -->
+      </div>
+      <div class="hero-banner">
+       <div>
+        <div class="hero-overline">
+         <svg class="icon">
+          <use href="#i-shield">
+          </use>
+         </svg>
+         GEST&Atilde;O INTELIGENTE DE PRIVACIDADE
+        </div>
+        <h2>
+         Mapeamento de dados,
+         <br/>
+         <span>
+          mais simples e eficiente.
+         </span>
+        </h2>
+        <p>
+         Conduza entrevistas assistidas por IA e organize as atividades de tratamento em um s&oacute; lugar.
+        </p>
+        <button class="hero-link" id="heroIniciar">
+         Abrir entrevistas
+         <svg class="icon">
+          <use href="#i-arrow">
+          </use>
+         </svg>
+        </button>
+       </div>
+       <div aria-hidden="true" class="hero-art">
+        <div class="hero-orbit orb-a">
+        </div>
+        <div class="hero-orbit orb-b">
+        </div>
+        <div class="hero-shield">
+         <svg class="icon">
+          <use href="#i-shield">
+          </use>
+         </svg>
+        </div>
+        <div class="hero-mini chip-one">
+         &checkmark; Dados organizados
+        </div>
+        <div class="hero-mini chip-two">
+         ◉ Gest&atilde;o LGPD
+        </div>
+       </div>
+      </div>
+      <div class="section-label">
+       <h2>
+        Indicadores gerais
+       </h2>
+       <span>
+        Atualizados com os dados salvos
+       </span>
+      </div>
+      <div aria-live="polite" class="stats-grid" id="statsGrid">
+      </div>
+      <div class="dashboard-columns">
+       <section class="panel">
+        <div class="panel-header">
+         <div>
+          <h2>
+           Entrevistas recentes
+          </h2>
+          <p>
+           Acompanhe os mapeamentos em andamento
+          </p>
+         </div>
+         <button class="text-action" id="verTodas">
+          Ver todas
+          <svg class="icon">
+           <use href="#i-arrow">
+           </use>
+          </svg>
+         </button>
+        </div>
+        <div class="recent-list" id="recentes">
+        </div>
+       </section>
+       <section class="panel progress-panel">
+        <div class="panel-header">
+         <div>
+          <h2>
+           Evolu&ccedil;&atilde;o do mapeamento
+          </h2>
+          <p>
+           Preenchimento dos campos registrados
+          </p>
+         </div>
+        </div>
+        <div id="progressoGeral">
+        </div>
+        <div class="hint-box">
+         <svg class="icon">
+          <use href="#i-info">
+          </use>
+         </svg>
+         <p>
+          O percentual considera apenas processos identificados. Campos impl&iacute;citos devem ser confirmados com o respons&aacute;vel.
+         </p>
+        </div>
+       </section>
+      </div>
+     </section>
+     <section aria-label="Entrevistas" class="view" id="view-entrevistas">
+      <div class="page-heading">
+       <div>
+        <div class="eyebrow">
+         ENTREVISTAS ASSISTIDAS
+        </div>
+        <h1>
+         Entrevistas
+        </h1>
+        <p>
+         Converse com o agente para identificar e documentar tratamentos de dados.
+        </p>
+       </div>
+       <div class="page-hint">Para criar uma entrevista, use <strong>+ Nova entrevista</strong> no topo.</div>
+      </div>
+      <div class="workspace">
+       <aside class="panel interview-list-panel">
+        <div class="panel-header list-header">
+         <div>
+          <h2>
+           Hist&oacute;rico
+          </h2>
+          <p>
+           Selecione uma entrevista
+          </p>
+         </div>
+        </div>
+        <div class="search-box">
+         <svg class="icon">
+          <use href="#i-search">
+          </use>
+         </svg>
+         <input aria-label="Buscar entrevistas" autocomplete="off" id="searchInterviews" placeholder="Buscar entrevista..." type="search"/>
+        </div>
+        <div class="interview-list" id="lista">
+        </div>
+       </aside>
+       <div class="interview-main">
+        <div class="panel chat-panel">
+         <div class="chat-header">
+          <div class="ai-symbol">
+           <svg class="icon">
+            <use href="#i-chat">
+            </use>
+           </svg>
+          </div>
+          <div class="chat-title">
+           <h2 id="titulo">
+            Assistente de privacidade
+           </h2>
+           <span id="subtitulo">
+            Selecione uma entrevista para come&ccedil;ar
+           </span>
+          </div>
+          <span class="interview-status" id="statusEntrevista" aria-live="polite"></span>
+          <button class="btn btn-outline btn-sm" id="encerrarEntrevista" type="button">Encerrar</button>
+          <button aria-label="Renomear entrevista" class="icon-btn" id="renomearBtn" title="Renomear">
+           <svg class="icon">
+            <use href="#i-pen">
+            </use>
+           </svg>
+          </button>
+         </div>
+         <div aria-live="polite" class="chat-feed" id="chat" role="log">
+         </div>
+         <div class="chat-closed" id="avisoEncerrada" hidden>
+          Entrevista encerrada. O registro foi salvo, e as pendências continuam no mapeamento.
+          Use <strong>Reabrir entrevista</strong> para continuar.
+        </div>
+        <div class="chat-compose" id="chatCompose">
+          <form id="form">
+           <button aria-label="Gravar por voz" class="icon-btn mic-button" id="mic" title="Falar (Chrome/Edge)" type="button">
+            <svg class="icon">
+             <use href="#i-mic">
+             </use>
+            </svg>
+           </button>
+           <textarea aria-label="Sua resposta" id="entrada" placeholder="Responda &agrave; pergunta do agente..." rows="1"></textarea>
+           <button class="btn btn-primary send-btn" id="enviar" type="submit">
+            <svg class="icon">
+             <use href="#i-send">
+             </use>
+            </svg>
+            <span>
+             Enviar
+            </span>
+           </button>
+          </form>
+          <div class="compose-hint">
+           Enter envia &middot; Shift+Enter quebra linha
+           <span>
+            O agente pode cometer erros. Revise as sugest&otilde;es jur&iacute;dicas.
+           </span>
+          </div>
+         </div>
+        </div>
+       </div>
+       <aside class="panel live-map">
+        <div class="panel-header compact">
+         <div>
+          <h2>
+           Mapeamento ao vivo
+          </h2>
+          <p>
+           Informa&ccedil;&otilde;es extra&iacute;das da entrevista
+          </p>
+         </div>
+         <button aria-label="Atualizar mapeamento" class="icon-btn" id="atualizarMapa" title="Refazer o mapeamento da conversa">
+          <svg class="icon">
+           <use href="#i-refresh">
+           </use>
+          </svg>
+         </button>
+        </div>
+        <div class="map-live-body" id="mapaResumo">
+        </div>
+        <button class="btn btn-outline btn-block" id="irMapeamento">
+         Abrir mapeamento completo
+         <svg class="icon">
+          <use href="#i-arrow">
+          </use>
+         </svg>
+        </button>
+       </aside>
+      </div>
+     </section>
+     <section aria-label="Mapeamento de processos" class="view" id="view-processos">
+      <div class="page-heading">
+       <div>
+        <div class="eyebrow">
+         REGISTRO DAS OPERA&Ccedil;&Otilde;ES DE TRATAMENTO
+        </div>
+        <h1>
+         Mapeamento de processos
+        </h1>
+        <p>
+         Revise os dados, identifique lacunas e complete cada atividade.
+        </p>
+       </div>
+       <div class="heading-actions">
+        <button class="btn btn-outline" id="recuperarBases" title="Recupera sugestões de base legal que já foram escritas pelo entrevistado, sem chamar o Gemini">Recuperar bases sugeridas</button>
+        <button class="btn btn-outline" id="atualizarMapaCompleto">
+         <svg class="icon">
+          <use href="#i-refresh">
+          </use>
+         </svg>
+         Reconstruir
+        </button>
+        <button class="btn btn-primary" id="addProcesso">
+         <svg class="icon">
+          <use href="#i-plus">
+          </use>
+         </svg>
+         Adicionar processo
+        </button>
+       </div>
+      </div>
+      <div class="panel process-head">
+       <div>
+        <strong id="processEntName">
+         Nenhuma entrevista selecionada
+        </strong>
+        <p id="processEntDesc">
+         Selecione uma entrevista para visualizar seus processos.
+        </p>
+       </div>
+       <button class="btn btn-ghost" id="escolherEntrevista">
+        Escolher entrevista
+        <svg class="icon">
+         <use href="#i-arrow">
+         </use>
+        </svg>
+       </button>
+      </div>
+      <div class="process-list" id="mapa">
+      </div>
+     </section>
+     <section aria-label="Relat&oacute;rios" class="view" id="view-relatorios">
+      <div class="page-heading">
+       <div>
+        <div class="eyebrow">
+         DOCUMENTA&Ccedil;&Atilde;O E EXPORTA&Ccedil;&Atilde;O
+        </div>
+        <h1>
+         Relat&oacute;rios
+        </h1>
+        <p>
+         Exporte o registro das opera&ccedil;&otilde;es e a transcri&ccedil;&atilde;o das entrevistas.
+        </p>
+       </div>
+      </div>
+      <div class="panel report-panel">
+       <div class="report-icon">
+        <svg class="icon">
+         <use href="#i-report">
+         </use>
+        </svg>
+       </div>
+       <div>
+        <h2>
+         Relat&oacute;rio de mapeamento LGPD
+        </h2>
+        <p>
+         Documento Markdown (.md) com processos, campos, lacunas e hist&oacute;rico da entrevista. Pode ser aberto no VS Code ou convertido posteriormente.
+        </p>
+        <div class="report-select">
+         <label for="reportInterview">
+          Entrevista para exporta&ccedil;&atilde;o
+         </label>
+         <select id="reportInterview">
+          <option value="">
+           Selecione uma entrevista
+          </option>
+         </select>
+        </div>
+        <button class="btn btn-primary" id="baixarMd">
+         <svg class="icon">
+          <use href="#i-download">
+          </use>
+         </svg>
+         Baixar relat&oacute;rio .md
+        </button>
+       </div>
+      </div>
+      <div class="hint-box report-note">
+       <svg class="icon">
+        <use href="#i-info">
+        </use>
+       </svg>
+       <p>
+        A exporta&ccedil;&atilde;o cont&eacute;m informa&ccedil;&otilde;es fornecidas pelo entrevistado e infer&ecirc;ncias da IA identificadas como impl&iacute;citas. Verifique tudo antes de uso jur&iacute;dico ou compartilhamento.
+       </p>
+      </div>
+     </section>
+     <section aria-label="Configura&ccedil;&otilde;es" class="view" id="view-configuracoes">
+      <div class="page-heading">
+       <div>
+        <div class="eyebrow">
+         AMBIENTE DE EXECU&Ccedil;&Atilde;O
+        </div>
+        <h1>
+         Configura&ccedil;&otilde;es
+        </h1>
+        <p>
+         Informa&ccedil;&otilde;es do ambiente local e orienta&ccedil;&otilde;es para manter suas credenciais seguras.
+        </p>
+       </div>
+      </div>
+      <div class="panel settings-panel">
+       <div class="settings-row">
+        <span class="settings-icon">
+         <svg class="icon">
+          <use href="#i-shield">
+          </use>
+         </svg>
+        </span>
+        <div>
+         <h2>
+          Armazenamento local
+         </h2>
+         <p>
+          Entrevistas e relat&oacute;rios s&atilde;o salvos na pasta
+          <code>
+           entrevistas/
+          </code>
+          da instala&ccedil;&atilde;o.
+         </p>
+        </div>
+        <span class="tag good">
+         Ativo
+        </span>
+       </div>
+       <div class="settings-row">
+        <span class="settings-icon">
+         <svg class="icon">
+          <use href="#i-settings">
+          </use>
+         </svg>
+        </span>
+        <div>
+         <h2>
+          Configura&ccedil;&atilde;o Gemini
+         </h2>
+         <p>
+          Configure
+          <code>
+           GEMINI_API_KEY
+          </code>
+          ,
+          <code>
+           GEMINI_MODELO
+          </code>
+          e
+          <code>
+           GEMINI_TIMEOUT
+          </code>
+          no arquivo
+          <code>
+           .env
+          </code>
+          da raiz. Reinicie o servidor ap&oacute;s mudar.
+         </p>
+        </div>
+       </div>
+       <div class="settings-row">
+        <span class="settings-icon">
+         <svg class="icon">
+          <use href="#i-info">
+          </use>
+         </svg>
+        </span>
+        <div>
+         <h2>
+          Privacidade e seguran&ccedil;a
+         </h2>
+         <p>
+          As entrevistas n&atilde;o s&atilde;o criptografadas e mensagens enviadas &agrave; IA s&atilde;o processadas pela API Google Gemini. N&atilde;o exponha o servidor &agrave; internet sem autentica&ccedil;&atilde;o e prote&ccedil;&atilde;o adicional.
+         </p>
+        </div>
+       </div>
+      </div>
+     </section>
+    </main>
+   </div>
+  </div>
+  <div aria-live="polite" class="toast" id="toast" role="status">
+  </div>
+  <script src="/static/app.js" type="module">
+  </script>
+ </body>
+</html>

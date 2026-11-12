@@ -1,0 +1,104 @@
+/* 06 - Relatórios, configuração e exportação. */
+
+.report-panel {
+  padding: 32px;
+  display: flex;
+  gap: 23px;
+  max-width: 840px;
+}
+
+.report-icon {
+  border-radius: 15px;
+  background: #eaf3fb;
+  color: var(--blue);
+  padding: 22px;
+  height: 75px;
+}
+
+.report-icon .icon {
+  width: 30px;
+  height: 30px;
+}
+
+.report-panel h2 {
+  font-size: 19px;
+}
+
+.report-panel p {
+  color: var(--muted);
+  max-width: 570px;
+}
+
+.report-select {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 20px 0;
+  width: min(450px,100%);
+}
+
+.report-select label {
+  font-weight: 800;
+  color: #46576d;
+  font-size: 12px;
+}
+
+select {
+  background: white;
+  border: 1px solid #d4dfeb;
+  border-radius: 8px;
+  padding: 12px;
+  color: var(--ink);
+  width: 100%;
+}
+
+.report-note {
+  max-width: 840px;
+  margin: 18px 0;
+}
+
+.settings-panel {
+  max-width: 900px;
+}
+
+.settings-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 23px;
+  border-bottom: 1px solid var(--line);
+}
+
+.settings-row:last-child {
+  border-bottom: 0;
+}
+
+.settings-row>div {
+  flex: 1;
+}
+
+.settings-row h2 {
+  margin: 0 0 5px;
+}
+
+.settings-row p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.settings-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: var(--soft-blue);
+  color: var(--blue);
+}
+
+code {
+  background: #edf1f6;
+  padding: 2px 4px;
+  border-radius: 4px;
+}

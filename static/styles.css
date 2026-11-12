@@ -1,0 +1,9 @@
+/* Ponto de entrada do tema. Cada seção visual está em static/css/. */
+@import url("/static/css/base.css");
+@import url("/static/css/layout.css");
+@import url("/static/css/dashboard.css");
+@import url("/static/css/interviews.css");
+@import url("/static/css/mapping.css");
+@import url("/static/css/reports.css");
+@import url("/static/css/feedback.css");
+@import url("/static/css/responsive.css");

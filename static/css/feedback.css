@@ -1,0 +1,107 @@
+/* 07 - Alertas, notificações, estados de espera e animações. */
+
+.toast {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  background: var(--navy);
+  color: #fff;
+  padding: 14px 17px;
+  border-radius: 11px;
+  box-shadow: 0 15px 45px #14203945;
+  max-width: min(400px,calc(100vw - 32px));
+  z-index: 30;
+  font-size: 13px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(14px);
+  transition: all .2s;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast.error {
+  background: #a63350;
+}
+
+.inline-editor {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+  align-items: flex-end;
+}
+
+.inline-editor textarea {
+  resize: vertical;
+  width: 100%;
+  min-height: 70px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.inline-editor .btn {
+  padding: 7px 9px;
+  min-height: 34px;
+}
+
+.thinking {
+  display: inline-flex;
+  gap: 5px;
+  padding: 14px 18px;
+  align-items: center;
+  border-radius: 12px;
+  background: #f3f6fa;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.thinking i {
+  width: 6px;
+  height: 6px;
+  background: #7ea9cf;
+  border-radius: 50%;
+  animation: blink 1s infinite alternate;
+}
+
+.thinking i:nth-child(2) {
+  animation-delay: .3s;
+}
+
+.thinking i:nth-child(3) {
+  animation-delay: .6s;
+}
+
+@keyframes blink {
+  to {
+    opacity: .25;
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes pulse {
+  50% {
+    opacity: .6;
+  }
+}
+
+/* Estado persistente da entrevista, independente do preenchimento do mapa. */
+.interview-status { font-size: 12px; font-weight: 700; white-space: nowrap; border-radius: 50px; padding: 5px 10px; }
+.interview-status.active { color: #276020; background: #e7f5d7; }
+.interview-status.closed { color: #4c5b72; background: #edf1f6; }
+.chat-closed { border-top: 1px solid #d9e1eb; padding: 16px 22px; color: #243155; background: #f4f7fa; font-size: 13px; }
+.chat-compose[hidden], .chat-closed[hidden] { display: none !important; }
+.interview-badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.interview-state, .interview-juridical { display: inline-flex; padding: 2px 7px; border-radius: 50px; font-size: 10px; font-weight: 700; }
+.interview-state.closed { background: #e8edf4; color: #42506a; }
+.interview-state.ongoing { background: #e8f5dd; color: #326322; }
+.interview-juridical { background: #fff5dd; color: #916022; }
+.legal-validation { display:flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 8px; color: #656f85; font-size: 12px; flex-wrap: wrap; }
+.page-hint { color: #66788f; font-size: 13px; }
+@media (max-width: 800px) { .chat-header { flex-wrap: wrap; } .interview-status { margin-left: auto; } .page-hint { display: none; } }
+
+.stat-card:nth-child(5) .stat-icon { background: #e5f1fb; color: #096497; }
